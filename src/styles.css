@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.wrapper header {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: max-content;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+header > h1 img {
+    position: relative;
+    top: 10px;
+    left: 0;
+}
+
+header h1 {
+    padding-left: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-style: italic;
+    padding-left: 0.5rem;
+}
+
+header .search-box {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.search-box input {
+    border: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    min-width: 50%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.search-button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(25, 25, 25);
+    padding: 0.5rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+    color: white;
+}
+
+.search-button.shifted {
+    transform: translateX(-100%);
+}
+
+.wrapper main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+main .current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
