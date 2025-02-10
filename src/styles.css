@@ -25,9 +25,6 @@ html {
     flex-direction: column;
     padding: 1rem 2.5rem;
     height: max-content;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
     position: fixed;
     width: 100%;
 }
@@ -102,12 +99,7 @@ header .search-box {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-    border-bottom-right-radius: none;
-    border-bottom-left-radius: none;
-    border-top: none;
-    padding: 1rem;
+    padding: 1rem 3rem;
     margin-top: 180px;
     overflow-y: auto;
 }
@@ -147,7 +139,11 @@ main .current-weather {
 
 .degree, .temp {
     font-size: 3rem !important;
-    font-weight: 500 !important;
+    font-weight: 700 !important;
+}
+
+.fl, .feels-like, .description {
+    font-size: 1.2rem;
 }
 
 .weather-details span {
@@ -169,7 +165,8 @@ main .current-weather {
     text-align: left;
     width: 100%;
     font-size: 1.5rem;
-    margin-left: -40px;
+    margin-left: -23px;
+    margin-top: 10px;
 }
 
 .five-day-forcast-container {
@@ -182,7 +179,7 @@ main .current-weather {
     border-radius: 10px;
     width: 100%;
     margin-top: 1rem;
-    margin-bottom: 3.5rem;
+    height: auto;
 }
 
 .five-day-forcast {
@@ -194,6 +191,7 @@ main .current-weather {
     width: 100%;
     padding: 1rem;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .five-day-forcast-container h2 {
@@ -226,8 +224,7 @@ footer {
     border-top: none;
     background-color: rgb(25, 25, 25);
     width: 100%;
-    bottom: 0;
-    gap: 20px;
+    height: 50px;
 }
 
 footer a {
@@ -243,4 +240,6 @@ footer a:hover {
 footer .source-code {
     display: inline-block;
     margin-left: 5rem;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }

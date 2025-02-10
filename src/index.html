@@ -14,18 +14,18 @@
             <h2>Find the weather forecast for any city</h2>
             <div class="search-box">
                 <input type="text" class="search-bar" placeholder="Search for a city...">
-                <button class="search-button"><i class="fas fa-search"></i> Search</button>
+                <button class="search-button" onclick="fetchData()"><i class="fas fa-search"></i> Search</button>
         </header>
         <main class="weather-container">
             <div class="current-weather">
-                <h2>Current Weather in <span style="color: rgb(255, 255, 10);" class="cityname">City</span></h2>
+                <h2>Current Weather in <span style="color: rgb(255, 255, 10);" class="cityname"></span></h2>
                 <div class="weather-details">
                     <div class="weather-description">
                         <div class="weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="degree"><span class="temp">0</span>&deg;C</h3>
-                        <h3>Feels Like: <span class="feels-like">0</span>&deg;C</h3>
+                        <h3 class="fl">Feels Like: <span class="feels-like">0</span>&deg;C</h3>
                         <h3 class="description">Partly Cloudy</h3>
                     </div>
                     <div class="temperature">
@@ -53,10 +53,10 @@
                     <div class="forcast"></div>
                 </div>
             </div>
+            <footer>
+                <p>Made by <a target="_blank" href="https://github.com/jamesyim">James - Jaysthetic Design</a><br> <a class="source-code" href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
+            </footer>
         </main>
-        <footer>
-            <p>Created by <a target="_blank" href="https://github.com/jamesyim">James - Jaysthetic Design</a><br> <a class="source-code" href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
-        </footer>
     </div>
 </body>
 </html>
