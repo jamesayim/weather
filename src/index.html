@@ -18,35 +18,44 @@
         </header>
         <main class="weather-container">
             <div class="current-weather">
-                <h2>Current Weather in <span class="cityname"></span></h2>
+                <h2>Current Weather in <span style="color: rgb(255, 255, 10);" class="cityname">City</span></h2>
                 <div class="weather-details">
-                    <div class="weather-icon">
-                        <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
-                    </div>
                     <div class="weather-description">
-                        <h3><span class="temp">0</span>&deg;C</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="degree"><span class="temp">0</span>&deg;C</h3>
                         <h3>Feels Like: <span class="feels-like">0</span>&deg;C</h3>
                         <h3 class="description">Partly Cloudy</h3>
                     </div>
                     <div class="temperature">
                         <h3>Humidity: <span class="humidity">0</span>%</h3>
                         <h3>Wind Speed: <span class="wind-speed">0</span> km/h</h3>
+                        <h3>Pressure: <span class="pressure">0</span> hPa</h3>
+                        <h3>Sunrise: <span class="sunrise-time"></span></h3>
+                        <h3>Sunset: <span class="sunset-time"></span></h3>
                     </div>
                 </div>
-                <div class="weather-info">
-                    <h3 class="city">City
             </div>
-            <div class="five-day-forcast">
+            <div class="five-day-forcast-container">
                 <h2>5-Day Forecast</h2>
-                <div class="forcast"></div>
-                <div class="forcast"></div>
-                <div class="forcast"></div>
-                <div class="forcast"></div>
-                <div class="forcast"></div>
+                <div class="five-day-forcast">
+                    <div class="forcast">
+                        <h3 class="day">Monday</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="degree">0&deg;C</h3>
+                    </div>
+                    <div class="forcast"></div>
+                    <div class="forcast"></div>
+                    <div class="forcast"></div>
+                    <div class="forcast"></div>
+                </div>
             </div>
         </main>
         <footer>
-            <p>Created by <a target="_blank" href="https://github.com/jamesyim">James - Jaysthetic Design</a> <a href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
+            <p>Created by <a target="_blank" href="https://github.com/jamesyim">James - Jaysthetic Design</a><br> <a class="source-code" href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
         </footer>
     </div>
 </body>
