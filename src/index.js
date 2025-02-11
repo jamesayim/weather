@@ -12,6 +12,10 @@ const pressure = document.querySelector('.pressure');
 const sunrise = document.querySelector('.sunrise-time');
 const sunset = document.querySelector('.sunset-time');
 
+// Default
+document.addEventListener('DOMContentLoaded', () => fetchData('New York'));
+
+// Shift Search Button 
 function shiftSearchButton() {
     if (searchBar.value) {
         searchButton.classList.add('shifted');
@@ -23,6 +27,25 @@ function shiftSearchButton() {
 
 searchBar.addEventListener('input', shiftSearchButton);
 
+// Toggle unit
+const unitToggle = document.getElementById('unitToggle');
+const tempDisplay = document.getElementById('unit');
+
+function toggleUnit() {
+    unitToggle.addEventListener('change', () => {
+        if (unitToggle.checked) {
+            tempDisplay.textContent = '°C';
+            tempDisplay.style.color = '#2196F3';
+        } else {
+            tempDisplay.textContent = '°F';
+            tempDisplay.style.color = '';
+        }
+    });
+}
+
+toggleUnit();
+
+
 //  App
 const APIKEY = 'BAMYP5SM55S45QMEYXUFTXVAT';
 
@@ -33,9 +56,9 @@ function formatDate(date) {
     return `${year}-${month}-${day}`;
 }
 
-async function fetchData() {
+async function fetchData(defaulLocation) {
     try {
-        const location = searchBar.value.toLowerCase();
+        const location = searchBar.value.toLowerCase() || defaulLocation;
         const currentDate = new Date();
 
         const fetchedData = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${formatDate(currentDate)}/?key=${APIKEY}`, { mode: 'cors' })
@@ -69,10 +92,17 @@ async function fetchData() {
             sunrise.textContent = data.sunrise;
             sunset.textContent = data.sunset;
             console.log(data);
-        });
+        })
+        .then(function() {
+            const currentWeatherIcon = document.querySelector('.current-weather-icon');
+            currentWeatherIcon.src = fetchedData.icon;
+            currentWeatherIcon.alt = fetchedData.description;
+        })
     } catch(error) {
         console.log(error);
     }
 }
+
+
 
 window.fetchData = fetchData;

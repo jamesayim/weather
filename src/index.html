@@ -15,6 +15,14 @@
             <div class="search-box">
                 <input type="text" class="search-bar" placeholder="Search for a city...">
                 <button class="search-button" onclick="fetchData()"><i class="fas fa-search"></i> Search</button>
+                
+                <label class="toggle-switch">
+                    <input type="checkbox" id="unitToggle" >
+                    <span class="slider"></span>
+                </label>
+                <span id="unit">°F</span>
+            </div>
+
         </header>
         <main class="weather-container">
             <div class="current-weather">
@@ -22,10 +30,10 @@
                 <div class="weather-details">
                     <div class="weather-description">
                         <div class="weather-icon">
-                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                            <img class="current-weather-icon" src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
-                        <h3 class="degree"><span class="temp">0</span>&deg;C</h3>
-                        <h3 class="fl">Feels Like: <span class="feels-like">0</span>&deg;C</h3>
+                        <h3 class="degree"><span class="temp">0</span>&deg;F</h3>
+                        <h3 class="fl">Feels Like: <span class="feels-like">0</span>&deg;F</h3>
                         <h3 class="description">Partly Cloudy</h3>
                     </div>
                     <div class="temperature">
@@ -45,16 +53,41 @@
                         <div class="weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
-                        <h3 class="degree">0&deg;C</h3>
+                        <h3 class="forcast-degree">0&deg;F</h3>
                     </div>
-                    <div class="forcast"></div>
-                    <div class="forcast"></div>
-                    <div class="forcast"></div>
-                    <div class="forcast"></div>
+                    <div class="forcast">
+                        <h3 class="day">Tuesday</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="forcast-degree">0&deg;F</h3>
+                    </div>
+                    <div class="forcast">
+                        <h3 class="day">Wednesday</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="forcast-degree">0&deg;F</h3>
+                    </div>
+                    <div class="forcast">
+                        <h3 class="day">Thursday</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="forcast-degree">0&deg;F</h3>
+                    </div>
+                    <div class="forcast">
+                        <h3 class="day">Friday</h3>
+                        <div class="weather-icon">
+                            <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
+                        </div>
+                        <h3 class="forcast-degree">0&deg;F</h3>
+                        <h3 class="forcast-condition-5">Partly clouded</h3>
+                    </div>
                 </div>
             </div>
             <footer>
-                <p>Made by <a target="_blank" href="https://github.com/jamesyim">James - Jaysthetic Design</a><br> <a class="source-code" href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
+                <p>Made by <a target="_blank" href="https://github.com/jamesyim">James [ Jaysthetic Design ]</a> - <a class="source-code" href="https://github.com/jamesyim/weather" target="_blank"> Source Code &#128187;</a></p>
             </footer>
         </main>
     </div>

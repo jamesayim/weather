@@ -52,6 +52,7 @@ header .search-box {
     padding: 0.5rem;
     display: flex;
     flex: 1 1 auto;
+    gap: 20px;
 }
 
 .search-box input {
@@ -59,9 +60,7 @@ header .search-box {
     background-color: transparent;
     color: rgb(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-right: none;
+    border-radius: 10px;
     min-width: 50%;
     padding: 0.5rem;
     font-size: 1rem;
@@ -81,13 +80,19 @@ header .search-box {
     padding: 0.5rem;
     font-size: 1rem;
     transition: transform 0.3s ease-in-out;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
 }
 
 .search-button:hover {
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background-color: transparent;
+    background-color: #2196F3;
+    border-right: 2px solid rgba(0, 15, 224, 0.5);
     color: white;
+}
+.search-button:active {
+    transform: scale(0.95);
+    background-color: rgb(69, 106, 224);
 }
 
 .search-button.shifted {
@@ -194,7 +199,7 @@ main .current-weather {
     overflow: auto;
 }
 
-.five-day-forcast-container h2 {
+.five-day-forcast-container > h2 {
     text-align: left;
     width: 100%;
     font-size: 1.5rem;
@@ -206,16 +211,25 @@ main .current-weather {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    /* padding: 1rem; */
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 10px;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+}
+
+.forcast h3 {
+    font-size: 1.2rem;
+}
+
+.forcast .forcast-degree {
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -239,7 +253,57 @@ footer a:hover {
 
 footer .source-code {
     display: inline-block;
-    margin-left: 5rem;
     font-size: 0.9rem;
     margin-top: 5px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 33px;
+    width: 33px;
+    left: 6px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:checked + .slider:before {
+    transform: translateX(54px);
+}
+
+#unit {
+    font-size: 2.2rem;
+    height: 100%;
+    font-weight: 600;
+    color: #ccc;
 }
