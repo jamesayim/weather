@@ -14,7 +14,7 @@
             <h2>Find the weather forecast for any city</h2>
             <div class="search-box">
                 <input type="text" class="search-bar" placeholder="Search for a city...">
-                <button class="search-button" onclick="fetchData()"><i class="fas fa-search"></i> Search</button>
+                <button class="search-button"><i class="fas fa-search"></i> Search</button>
                 
                 <label class="toggle-switch">
                     <input type="checkbox" id="unitToggle" >
@@ -26,6 +26,7 @@
         </header>
         <main class="weather-container">
             <div class="current-weather">
+                <span class="cw-loading">Loading weather data...</span>
                 <h2>Current Weather in <span style="color: rgb(255, 255, 10);" class="cityname"></span></h2>
                 <div class="weather-details">
                     <div class="weather-description">
@@ -46,43 +47,48 @@
                 </div>
             </div>
             <div class="five-day-forcast-container">
+                <span class="f-loading">Loading weather data...</span>
                 <h2>5-Day Forecast</h2>
                 <div class="five-day-forcast">
                     <div class="forcast">
                         <h3 class="day">Monday</h3>
-                        <div class="weather-icon">
+                        <div class="f-weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="forcast-degree">0&deg;F</h3>
+                        <h3 class="forcast-condition">Partly clouded</h3>
                     </div>
                     <div class="forcast">
                         <h3 class="day">Tuesday</h3>
-                        <div class="weather-icon">
+                        <div class="f-weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="forcast-degree">0&deg;F</h3>
+                        <h3 class="forcast-condition">Partly clouded</h3>
                     </div>
                     <div class="forcast">
                         <h3 class="day">Wednesday</h3>
-                        <div class="weather-icon">
+                        <div class="f-weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="forcast-degree">0&deg;F</h3>
+                        <h3 class="forcast-condition">Partly clouded</h3>
                     </div>
                     <div class="forcast">
                         <h3 class="day">Thursday</h3>
-                        <div class="weather-icon">
+                        <div class="f-weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="forcast-degree">0&deg;F</h3>
+                        <h3 class="forcast-condition">Partly clouded</h3>
                     </div>
                     <div class="forcast">
                         <h3 class="day">Friday</h3>
-                        <div class="weather-icon">
+                        <div class="f-weather-icon">
                             <img src="./assets/partly-cloudy.png" alt="sun behing a cloud" sizes="(max-width: 24px) 14px, 16px">
                         </div>
                         <h3 class="forcast-degree">0&deg;F</h3>
-                        <h3 class="forcast-condition-5">Partly clouded</h3>
+                        <h3 class="forcast-condition">Partly clouded</h3>
                     </div>
                 </div>
             </div>
