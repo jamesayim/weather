@@ -132,14 +132,55 @@ async function fetchData(defaulLocation) {
             const forcastTempDegrees = document.querySelectorAll('.forcast-degree');
             const forcastConditions = document.querySelectorAll('.forcast-condition');
 
-            console.log(receivedForcastData);
             const forcastData = {
                 dayOne: 'Next day',
                 dayTwo: 'Next 2 days',
                 dayThree: 'Next 3 days',
                 dayFour: 'Next 4 days',
                 dayFive: 'Next 5 days',
-                
+                weatherIconForDayOne: receivedForcastData.days[1].icon,
+                weatherIconForDayTwo: receivedForcastData.days[2].icon,
+                weatherIconForDayThree: receivedForcastData.days[3].icon,
+                weatherIconForDayFour: receivedForcastData.days[4].icon,
+                weatherIconForDayFive: receivedForcastData.days[5].icon,
+                tempOne: receivedForcastData.days[1].temp,
+                tempTwo: receivedForcastData.days[2].temp,
+                tempThree: receivedForcastData.days[3].temp,
+                tempFour: receivedForcastData.days[4].temp,
+                tempFive: receivedForcastData.days[5].temp,
+                conditionOne: receivedForcastData.days[1].conditions,
+                conditionTwo: receivedForcastData.days[2].conditions,
+                conditionThree: receivedForcastData.days[3].conditions,
+                conditionFour: receivedForcastData.days[4].conditions,
+                conditionFive: receivedForcastData.days[5].conditions
+            }
+
+            for (let i = 0; i <= 4; i++) {
+                if (i === 0) {
+                    days[0].textContent = forcastData.dayOne;
+                    forcastTempDegrees[0].textContent = forcastData.tempOne;
+                    forcastConditions[0].textContent = forcastData.conditionOne;
+                }
+                else if (i === 1) {
+                    days[1].textContent = forcastData.dayTwo;
+                    forcastTempDegrees[1].textContent = forcastData.tempTwo;
+                    forcastConditions[1].textContent = forcastData.conditionTwo;
+                }
+                else if (i === 2) {
+                    days[2].textContent = forcastData.dayThree;
+                    forcastTempDegrees[2].textContent = forcastData.tempThree;
+                    forcastConditions[2].textContent = forcastData.conditionThree;
+                }
+                else if (i === 3) {
+                    days[3].textContent = forcastData.dayFour;
+                    forcastTempDegrees[3].textContent = forcastData.tempFour;
+                    forcastConditions[3].textContent = forcastData.conditionFour;
+                }
+                else if (i === 4) {
+                    days[4].textContent = forcastData.dayFive;
+                    forcastTempDegrees[4].textContent = forcastData.tempFive;
+                    forcastConditions[4].textContent = forcastData.conditionFive;
+                }
             }
         })
         .finally(() => {
@@ -193,6 +234,10 @@ function showErrorMessage() {
                 errorMessage.remove();
             }, 300);
     }, 3000);
+}
+
+function showCurrentWeather(weathericon, element) {
+    const possibleWeatherIcons = ['rain', 'overcast', ''];
 }
 
 window.fetchData = fetchData;

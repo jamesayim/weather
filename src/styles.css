@@ -353,3 +353,7 @@ input:checked + .slider:before {
 .fade-out {
     animation: fade-out 0.3s ease forwards;
 }
+
+.forcast-condition {
+    font-size: 0.9rem !important;
+}
