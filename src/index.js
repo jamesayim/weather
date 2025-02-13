@@ -42,30 +42,44 @@ searchBar.addEventListener('input', shiftSearchButton);
 const unitToggle = document.getElementById('unitToggle');
 const tempDisplay = document.getElementById('unit');
 
+let isCelcius = false;
+
 function toggleUnit() {
     unitToggle.addEventListener('change', () => {
         if (unitToggle.checked) {
             tempDisplay.textContent = '°C';
             tempDisplay.style.color = '#2196F3';
+            isCelcius = true;
         } else {
             tempDisplay.textContent = '°F';
             tempDisplay.style.color = '';
+            isCelcius = false;
         }
     });
 }
 
 toggleUnit();
 
-// Convert Fahrenheit to Celcius and vice versa
-function convertUnit() {
-    const currentDegree = document.querySelector('.degree');
-    const fDegreeOne = document.querySelector('.f-degree-1');
-    const fDegreeTwo = document.querySelector('.f-degree-2');
-    const fDegreeThree = document.querySelector('.f-degree-3');
-    const fDegreeFour = document.querySelector('.f-degree-4');
-    const fDegreeFive = document.querySelector('.f-degree-5');
+const currentDegree = document.querySelector('.degree');
+const fDegreeOne = document.querySelector('.f-degree-1');
+const fDegreeTwo = document.querySelector('.f-degree-2');
+const fDegreeThree = document.querySelector('.f-degree-3');
+const fDegreeFour = document.querySelector('.f-degree-4');
+const fDegreeFive = document.querySelector('.f-degree-5');
 
-    
+// Convert Fahrenheit to Celcius and vice versa
+function convertUnit(input) {
+    let currentDegreeResult;
+    let fDegreeOneResult;
+    let fDegreeTwoResult;
+    let fDegreeThreeResult;
+    let fDegreeFourResult;
+    let fDegreeFiveResult;
+
+    if (isCelcius) {
+        // Convert celcius to fahrenheit
+        let fahrenheitUnit = (parseFloat(input) * 9/5) + 35;
+    }
 }
 
 // Icons
