@@ -56,21 +56,143 @@ function toggleUnit() {
 
 toggleUnit();
 
+// Convert Fahrenheit to Celcius and vice versa
+function convertUnit() {
+    const currentDegree = document.querySelector('.degree');
+    const fDegreeOne = document.querySelector('.f-degree-1');
+    const fDegreeTwo = document.querySelector('.f-degree-2');
+    const fDegreeThree = document.querySelector('.f-degree-3');
+    const fDegreeFour = document.querySelector('.f-degree-4');
+    const fDegreeFive = document.querySelector('.f-degree-5');
+
+    
+}
+
+// Icons
+function showCurrentWeatherIcon(iconDescription, element, i) {
+    let iconName = iconDescription;
+    let elements = Array.from(element);
+    const index = i;
+
+    if (index === 0 && iconName === 'cloudy') {
+        elements[0].src = '/assets/cloudy.png';
+    } else if (index === 0 && iconName === 'partly-cloudy-day') {
+        elements[0].src = '/assets/partly-cloudy-day.png';
+    } else if (index === 0 && iconName === 'rain') {
+        elements[0].src = '/assets/rain.png';
+    } else if (index === 0 && iconName === 'snow') {
+        elements[0].src = '/assets/snow.png';
+    } else if (index === 0 && iconName === 'wind') {
+        elements[0].src = '/assets/windy-weather.png';
+    } else if (index === 0 && iconName === 'clear-day') {
+        elements[0].src = '/assets/sun.png';
+    } else if (index === 0 && iconName === 'storm') {
+        elements[0].src = '/assets/stormy-night.png';
+    } else if (index === 0 && iconName === 'fog') {
+        elements[0].src = '/assets/fog.png';
+    } else if (index === 0 && iconName === 'partly-cloudy-night') {
+        elements[0].src = '/assets/cloudy-night.png';
+    } else if (index === 0 && iconName === 'clear-night') {
+        elements[0].src = '/assets/clear-night.png';
+    }
+            
+    if (index === 1 && iconName === 'cloudy') {
+        elements[1].src = '/assets/cloudy.png';
+    } else if (index === 1 && iconName === 'partly-cloudy-day') {
+        elements[1].src = '/assets/partly-cloudy-day.png';
+    } else if (index === 1 && iconName === 'rain') {
+        elements[1].src = '/assets/rain.png';
+    } else if (index === 1 && iconName === 'snow') {
+        elements[1].src = '/assets/snow.png';
+    } else if (index === 1 &&iconName === 'wind') {
+        elements[1].src = '/assets/windy-weather.png';
+    } else if (index === 1 && iconName === 'clear-day') {
+        elements[1].src = '/assets/sun.png';
+    } else if (index === 1 && iconName === 'storm') {
+        elements[1].src = '/assets/stormy-night.png';
+    } else if (index === 1 && iconName === 'fog') {
+        elements[1].src = '/assets/fog.png';
+    } else if (index === 1 && iconName === 'partly-cloudy-night') {
+        elements[1].src = '/assets/cloudy-night.png';
+    } else if (index === 1 && iconName === 'clear-night') {
+        elements[1].src = '/assets/clear-night.png';
+    }
+
+    if (index === 2 && iconName === 'cloudy') {
+        elements[2].src = '/assets/cloudy.png';
+    } else if (index === 2 && iconName === 'partly-cloudy-day') {
+        elements[2].src = '/assets/partly-cloudy-day.png';
+    } else if (index === 2 && iconName === 'rain') {
+        elements[2].src = '/assets/rain.png';
+    } else if (index === 2 && iconName === 'snow') {
+        elements[2].src = '/assets/snow.png';
+    } else if (index === 2 && iconName === 'wind') {
+        elements[2].src = '/assets/windy-weather.png';
+    } else if (index === 2 && iconName === 'clear-day') {
+        elements[2].src = '/assets/sun.png';
+    } else if (index === 2 && iconName === 'storm') {
+        elements[2].src = '/assets/stormy-night.png';
+    } else if (index === 2 && iconName === 'fog') {
+        elements[2].src = '/assets/fog.png';
+    } else if (index === 2 && iconName === 'partly-cloudy-night') {
+        elements[2].src = '/assets/cloudy-night.png';
+    } else if (index === 2 && iconName === 'clear-night') {
+        elements[2].src = '/assets/clear-night.png';
+    }
+
+    if (index === 3 && iconName === 'cloudy') {
+        elements[3].src = '/assets/cloudy.png';
+    } else if (index === 3 && iconName === 'partly-cloudy-day') {
+        elements[3].src = '/assets/partly-cloudy-day.png';
+    } else if (index === 3 && iconName === 'rain') {
+        elements[3].src = '/assets/rain.png';
+    } else if (index === 3 && iconName === 'snow') {
+        elements[3].src = '/assets/snow.png';
+    } else if (index === 3 && iconName === 'wind')  {
+        elements[3].src = '/assets/windy-weather.png';
+    } else if (index === 3 && iconName === 'clear-day') {
+        elements[3].src = '/assets/sun.png';
+    } else if (index === 3 && iconName === 'storm') {
+        elements[3].src = '/assets/stormy-night.png';
+    } else if (index === 3 && iconName === 'fog') {
+        elements[3].src = '/assets/fog.png';
+    } else if (index === 3 && iconName === 'partly-cloudy-night') {
+        elements[3].src = '/assets/cloudy-night.png';
+    } else if (index === 3 && iconName === 'clear-night') {
+        elements[3].src = '/assets/clear-night.png';
+    }
+
+    if (index === 4 && iconName === 'cloudy') {
+        elements[4].src = '/assets/cloudy.png';
+    } else if (index === 4 && iconName === 'partly-cloudy-day') {
+        elements[4].src = '/assets/partly-cloudy-day.png';
+    } else if (index === 4 && iconName === 'rain') {
+        elements[4].src = '/assets/rain.png';
+    } else if (index === 4 && iconName === 'snow') {
+        elements[4].src = '/assets/snow.png';
+    } else if (index === 4 && iconName === 'wind') {
+        elements[4].src = '/assets/windy-weather.png';
+    } else if (index === 4 && iconName === 'clear-day') {
+        elements[4].src = '/assets/sun.png';
+    } else if (index === 4 && iconName === 'storm') {
+        elements[4].src = '/assets/stormy-night.png';
+    } else if (index === 4 && iconName === 'fog') {
+        elements[4].src = '/assets/fog.png';
+    } else if (index === 4 && iconName === 'partly-cloudy-night') {
+        elements[4].src = '/assets/cloudy-night.png';
+    } else if (index === 4 && iconName === 'clear-night') {
+        elements[4].src = '/assets/clear-night.png';
+    }
+}
 
 //  App
 const APIKEY = 'BAMYP5SM55S45QMEYXUFTXVAT';
-
-function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-}
 
 async function fetchData(defaulLocation) {
     try {
         const location = searchBar.value.toLowerCase() || defaulLocation;
         const currentDate = new Date();
+        const currentWeatherIcon = document.querySelector('.current-weather-icon');
         const currentWeatherContainer = document.querySelector('.current-weather');
         const currentWeatherChildren = currentWeatherContainer.children;
         const fiveDayForcastContainer = document.querySelector('.five-day-forcast-container');
@@ -91,29 +213,31 @@ async function fetchData(defaulLocation) {
             }
         }
 
-        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${formatDate(currentDate)}/?key=${APIKEY}`, { mode: 'cors' })
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=${APIKEY}`, { mode: 'cors' })
         .then(async function(response) {
 
             const receivedData = await response.json();
-
-            const currentWeatherData = {
-                cityname: receivedData.resolvedAddress,
-                condition: receivedData.currentConditions.conditions,
-                temperature: receivedData.currentConditions.temp,
-                description: receivedData.description,
-                feelslike: receivedData.currentConditions.feelslike,
-                icon: receivedData.currentConditions.icon,
-                humidity: receivedData.currentConditions.humidity,
-                windspeed: receivedData.currentConditions.windspeed,
-                pressure: receivedData.currentConditions.pressure,
-                sunrise: receivedData.currentConditions.sunrise,
-                sunset: receivedData.currentConditions.sunset,
-            };
-            searchBar.value = '';
-            return currentWeatherData;
+            
+            if (receivedData) {
+                const currentWeatherData = {
+                    cityname: receivedData.resolvedAddress,
+                    condition: receivedData.currentConditions.conditions,
+                    temperature: receivedData.currentConditions.temp,
+                    description: receivedData.description,
+                    feelslike: receivedData.currentConditions.feelslike,
+                    icon: receivedData.currentConditions.icon,
+                    humidity: receivedData.currentConditions.humidity,
+                    windspeed: receivedData.currentConditions.windspeed,
+                    pressure: receivedData.currentConditions.pressure,
+                    sunrise: receivedData.currentConditions.sunrise,
+                    sunset: receivedData.currentConditions.sunset,
+                };
+                searchBar.value = '';
+                return currentWeatherData;
+            }
         })
         .then(function(data) {
-            cityName.textContent = `${ data.cityname}`;
+            cityName.textContent = data.cityname;
             temp.textContent = data.temperature;
             feelsLike.textContent = data.feelslike;
             condition.textContent = data.condition;
@@ -122,13 +246,33 @@ async function fetchData(defaulLocation) {
             pressure.textContent = data.pressure;
             sunrise.textContent = data.sunrise;
             sunset.textContent = data.sunset;
+            
+            if (data.icon === 'partly-cloudy-day') {
+                currentWeatherIcon.src = '/assets/partly-cloudy-day.png';
+            } else if (data.icon === 'rain') {
+                currentWeatherIcon.src = '/assets/rain.png';
+            } else if (data.icon === 'snow') {
+                currentWeatherIcon.src = '/assets/snow.png';
+            } else if (data.icon === 'fog') {
+                currentWeatherIcon.src = '/assets/fog.png';
+            } else if (data.icon === 'clear-day') {
+                currentWeatherIcon.src = '/assets/sun.png';
+            } else if (data.icon === 'wind') {
+                currentWeatherIcon.src = '/assets/windy-weather.png';
+            } else if (data.icon === 'cloudy') {
+                currentWeatherIcon.src = '/assets/cloudy.png';
+            } else if (data.icon === 'partly-cloudy-night') {
+                currentWeatherIcon.src = '/assets/cloudy-night.png';
+            } else if (data.icon === 'clear-night') {
+                currentWeatherIcon.src = '/assets/clear-night.png';
+            }
         })
         .then(async function() {
             const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=${APIKEY}`, { mode: 'cors' });
             const receivedForcastData = await response.json();
 
             const days = document.querySelectorAll('.day');
-            const weatherIcons = document.querySelectorAll('.f-weather-icon');
+            const weatherIcons = document.querySelectorAll('.f-weather-icon img');
             const forcastTempDegrees = document.querySelectorAll('.forcast-degree');
             const forcastConditions = document.querySelectorAll('.forcast-condition');
 
@@ -160,26 +304,31 @@ async function fetchData(defaulLocation) {
                     days[0].textContent = forcastData.dayOne;
                     forcastTempDegrees[0].textContent = forcastData.tempOne;
                     forcastConditions[0].textContent = forcastData.conditionOne;
+                    showCurrentWeatherIcon(forcastData.weatherIconForDayOne, weatherIcons, 0);
                 }
                 else if (i === 1) {
                     days[1].textContent = forcastData.dayTwo;
                     forcastTempDegrees[1].textContent = forcastData.tempTwo;
                     forcastConditions[1].textContent = forcastData.conditionTwo;
+                    showCurrentWeatherIcon(forcastData.weatherIconForDayTwo, weatherIcons, 1);
                 }
                 else if (i === 2) {
                     days[2].textContent = forcastData.dayThree;
                     forcastTempDegrees[2].textContent = forcastData.tempThree;
                     forcastConditions[2].textContent = forcastData.conditionThree;
+                    showCurrentWeatherIcon(forcastData.weatherIconForDayThree, weatherIcons, 2);
                 }
                 else if (i === 3) {
                     days[3].textContent = forcastData.dayFour;
                     forcastTempDegrees[3].textContent = forcastData.tempFour;
                     forcastConditions[3].textContent = forcastData.conditionFour;
+                    showCurrentWeatherIcon(forcastData.weatherIconForDayFour, weatherIcons, 3);
                 }
                 else if (i === 4) {
                     days[4].textContent = forcastData.dayFive;
                     forcastTempDegrees[4].textContent = forcastData.tempFive;
                     forcastConditions[4].textContent = forcastData.conditionFive;
+                    showCurrentWeatherIcon(forcastData.weatherIconForDayFive, weatherIcons, 4);
                 }
             }
         })
@@ -234,10 +383,6 @@ function showErrorMessage() {
                 errorMessage.remove();
             }, 300);
     }, 3000);
-}
-
-function showCurrentWeather(weathericon, element) {
-    const possibleWeatherIcons = ['rain', 'overcast', ''];
 }
 
 window.fetchData = fetchData;
