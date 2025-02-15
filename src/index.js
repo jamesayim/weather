@@ -18,14 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchData('New York');
 });
 
-// Search Button
-searchButton.addEventListener('click', (e) => {
-    if (searchBar.value) {
-        fetchData();
-    } else {
-        alert('Please crosscheck the city name and try again!');
-    }
-});
 
 // Shift Search Button 
 function shiftSearchButton() {
@@ -238,9 +230,29 @@ const fiveDayForcastChildren = fiveDayForcastContainer.children;
 const loadingForCW = document.querySelector('.cw-loading');
 const loadingForF = document.querySelector('.f-loading');
 
-async function fetchData(defaulLocation) {
+
+let location;
+
+// Search Button
+searchButton.addEventListener('click', () => {
+    if (searchBar.value) {
+        fetchData(location);
+    } else {
+        alert('Please crosscheck the city name and try again!');
+    }
+});
+
+// Keyboard support for input
+searchBar.addEventListener('keydown', (e) => {
+    if (e.code === "Enter") {
+        fetchData(location);
+    }
+});
+
+async function fetchData(defaultLocation) {
     try {
-        const location = searchBar.value.toLowerCase() || defaulLocation;
+
+        location = searchBar.value.toLowerCase() || defaultLocation;
 
         for (let element of currentWeatherChildren) {
             if (element.classList.contains('cw-loading')) element.style.display = 'flex';
