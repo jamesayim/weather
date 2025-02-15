@@ -5,6 +5,7 @@ const searchBar = document.querySelector('.search-bar');
 const cityName = document.querySelector('.cityname');
 const temp = document.querySelector('.temp');
 const feelsLike = document.querySelector('.feels-like');
+const forcastDegree = document.querySelectorAll('.forcast-degree');
 const condition = document.querySelector('.description');
 const humidity = document.querySelector('.humidity');
 const windspeed = document.querySelector('.wind-speed');
@@ -42,45 +43,72 @@ searchBar.addEventListener('input', shiftSearchButton);
 const unitToggle = document.getElementById('unitToggle');
 const tempDisplay = document.getElementById('unit');
 
+// Global unit flag
 let isCelcius = false;
 
+// Confirm toggle state
+
 function toggleUnit() {
-    unitToggle.addEventListener('change', () => {
-        if (unitToggle.checked) {
-            tempDisplay.textContent = '°C';
-            tempDisplay.style.color = '#2196F3';
-            isCelcius = true;
+    const allUnit = document.querySelectorAll('.new-degree');
+    allUnit.forEach(span => {
+        if (isCelcius) {
+            span.textContent = span.textContent.replace("°F", "°C");
         } else {
-            tempDisplay.textContent = '°F';
-            tempDisplay.style.color = '';
-            isCelcius = false;
+            span.textContent = span.textContent.replace("°C", "°F");
         }
     });
+    if (isCelcius) {
+        tempDisplay.textContent = '°C';
+        tempDisplay.style.color = '#2196F3';
+    } else {
+        isCelcius = false;
+        tempDisplay.textContent = '°F';
+        tempDisplay.style.color = '';
+    }
 }
 
-toggleUnit();
-
-const currentDegree = document.querySelector('.degree');
-const fDegreeOne = document.querySelector('.f-degree-1');
-const fDegreeTwo = document.querySelector('.f-degree-2');
-const fDegreeThree = document.querySelector('.f-degree-3');
-const fDegreeFour = document.querySelector('.f-degree-4');
-const fDegreeFive = document.querySelector('.f-degree-5');
+// Toggle button state
+unitToggle.addEventListener('change', function() {
+    isCelcius = this.checked;
+    toggleUnit();
+    liveUpdateTemp();
+});
 
 // Convert Fahrenheit to Celcius and vice versa
 function convertUnit(input) {
-    let currentDegreeResult;
-    let fDegreeOneResult;
-    let fDegreeTwoResult;
-    let fDegreeThreeResult;
-    let fDegreeFourResult;
-    let fDegreeFiveResult;
+    const tempInput = parseFloat(input);
 
     if (isCelcius) {
+        // Convert fahrenheit to celcius
+        let celcius = (5/9 * (tempInput - 32)).toFixed(1);
+        return celcius;
+        // updateELementHTML();
+    } else if (!isCelcius) {
         // Convert celcius to fahrenheit
-        let fahrenheitUnit = (parseFloat(input) * 9/5) + 35;
+        let fahrenheit = (9/5 * tempInput + 32).toFixed(1);
+        return fahrenheit;
     }
 }
+
+// Live update temp
+function liveUpdateTemp() {
+    let tempValue = parseFloat(temp.textContent);
+    let feelsLikeValue = parseFloat(feelsLike.textContent);
+    let forcastTemp1 = parseFloat(forcastDegree[0].textContent);
+    let forcastTemp2 = parseFloat(forcastDegree[1].textContent);
+    let forcastTemp3 = parseFloat(forcastDegree[2].textContent);
+    let forcastTemp4 = parseFloat(forcastDegree[3].textContent);
+    let forcastTemp5 = parseFloat(forcastDegree[4].textContent);
+
+    temp.textContent = convertUnit(tempValue);
+    feelsLike.textContent = convertUnit(feelsLikeValue);
+    forcastDegree[0].textContent = convertUnit(forcastTemp1);
+    forcastDegree[1].textContent = convertUnit(forcastTemp2);
+    forcastDegree[2].textContent = convertUnit(forcastTemp3);
+    forcastDegree[3].textContent = convertUnit(forcastTemp4);
+    forcastDegree[4].textContent = convertUnit(forcastTemp5);
+}
+
 
 // Icons
 function showCurrentWeatherIcon(iconDescription, element, i) {
@@ -202,17 +230,19 @@ function showCurrentWeatherIcon(iconDescription, element, i) {
 //  App
 const APIKEY = 'BAMYP5SM55S45QMEYXUFTXVAT';
 
+const currentWeatherIcon = document.querySelector('.current-weather-icon');
+const currentWeatherContainer = document.querySelector('.current-weather');
+const currentWeatherChildren = currentWeatherContainer.children;
+const fiveDayForcastContainer = document.querySelector('.five-day-forcast-container');
+const fiveDayForcastChildren = fiveDayForcastContainer.children;
+const loadingForCW = document.querySelector('.cw-loading');
+const loadingForF = document.querySelector('.f-loading');
+
+const currentWeatherDataObj = {};
+
 async function fetchData(defaulLocation) {
     try {
         const location = searchBar.value.toLowerCase() || defaulLocation;
-        const currentDate = new Date();
-        const currentWeatherIcon = document.querySelector('.current-weather-icon');
-        const currentWeatherContainer = document.querySelector('.current-weather');
-        const currentWeatherChildren = currentWeatherContainer.children;
-        const fiveDayForcastContainer = document.querySelector('.five-day-forcast-container');
-        const fiveDayForcastChildren = fiveDayForcastContainer.children;
-        const loadingForCW = document.querySelector('.cw-loading');
-        const loadingForF = document.querySelector('.f-loading');
 
         for (let element of currentWeatherChildren) {
             if (element.classList.contains('cw-loading')) element.style.display = 'flex';
@@ -252,8 +282,8 @@ async function fetchData(defaulLocation) {
         })
         .then(function(data) {
             cityName.textContent = data.cityname;
-            temp.textContent = data.temperature;
-            feelsLike.textContent = data.feelslike;
+            temp.textContent = convertUnit(data.temperature);
+            feelsLike.textContent = convertUnit(data.feelslike);
             condition.textContent = data.condition;
             humidity.textContent = data.humidity;
             windspeed.textContent = data.windspeed;
@@ -316,31 +346,31 @@ async function fetchData(defaulLocation) {
             for (let i = 0; i <= 4; i++) {
                 if (i === 0) {
                     days[0].textContent = forcastData.dayOne;
-                    forcastTempDegrees[0].textContent = forcastData.tempOne;
+                    forcastTempDegrees[0].textContent = convertUnit(forcastData.tempOne);
                     forcastConditions[0].textContent = forcastData.conditionOne;
                     showCurrentWeatherIcon(forcastData.weatherIconForDayOne, weatherIcons, 0);
                 }
                 else if (i === 1) {
                     days[1].textContent = forcastData.dayTwo;
-                    forcastTempDegrees[1].textContent = forcastData.tempTwo;
+                    forcastTempDegrees[1].textContent = convertUnit(forcastData.tempTwo);
                     forcastConditions[1].textContent = forcastData.conditionTwo;
                     showCurrentWeatherIcon(forcastData.weatherIconForDayTwo, weatherIcons, 1);
                 }
                 else if (i === 2) {
                     days[2].textContent = forcastData.dayThree;
-                    forcastTempDegrees[2].textContent = forcastData.tempThree;
+                    forcastTempDegrees[2].textContent = convertUnit(forcastData.tempThree);
                     forcastConditions[2].textContent = forcastData.conditionThree;
                     showCurrentWeatherIcon(forcastData.weatherIconForDayThree, weatherIcons, 2);
                 }
                 else if (i === 3) {
                     days[3].textContent = forcastData.dayFour;
-                    forcastTempDegrees[3].textContent = forcastData.tempFour;
+                    forcastTempDegrees[3].textContent = convertUnit(forcastData.tempFour);
                     forcastConditions[3].textContent = forcastData.conditionFour;
                     showCurrentWeatherIcon(forcastData.weatherIconForDayFour, weatherIcons, 3);
                 }
                 else if (i === 4) {
                     days[4].textContent = forcastData.dayFive;
-                    forcastTempDegrees[4].textContent = forcastData.tempFive;
+                    forcastTempDegrees[4].textContent = convertUnit(forcastData.tempFive);
                     forcastConditions[4].textContent = forcastData.conditionFive;
                     showCurrentWeatherIcon(forcastData.weatherIconForDayFive, weatherIcons, 4);
                 }
