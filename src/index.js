@@ -238,8 +238,6 @@ const fiveDayForcastChildren = fiveDayForcastContainer.children;
 const loadingForCW = document.querySelector('.cw-loading');
 const loadingForF = document.querySelector('.f-loading');
 
-const currentWeatherDataObj = {};
-
 async function fetchData(defaulLocation) {
     try {
         const location = searchBar.value.toLowerCase() || defaulLocation;
